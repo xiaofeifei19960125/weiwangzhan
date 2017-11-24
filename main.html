@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<!--移动端视口设置-->
+		<meta name="viewport" content="width=device-width,intital-scale=1.0,user-scalable=no"/>
+		<title>中软微网站</title>
+		<link rel="stylesheet" href="css/index.css" />
+		<!--swiper-->
+		<link rel="stylesheet" type="text/css" href="js/swiper/css/swiper.min.css"/>
+		
+		
+	</head>
+	<body>
+		<!--侧滑菜单开始-->
+		<nav id="nav" class="left-nav">
+			<h2>网站导航</h2>
+			<ul>
+				<li><a href="index.html">首页</a></li>
+				<li><a href="01.html">卓越简介</a></li>
+				<li><a href="02.html">名企推荐</a></li>
+				<li>院校合作</li>
+				<li>精彩活动</li>
+				<li>预约报名</li>
+				<li>就业流程</li>
+				<li>常见问题</li>
+				<li><a href="map.html">地图位置</a></li>
+			</ul>	
+		</nav>
+		<!--侧滑菜单结束-->
+		<!--主内容区开始-->
+		<div id="main" class="bg" >
+			
+			
+		</div>
+		<!--主内容区结束-->
+		<!--底部导航开始-->
+			<footer>
+				<a href="javascript:void(0)" id="navBtn">
+					<b>&#xe609</b>
+					<i>导航</i>	
+				</a>
+				<a href="tel:10086">
+					<b>&#xe602</b>
+					<i>电话</i>	
+				</a>
+				<a href="#">
+					<b>&#xe603</b>
+					<i>申请试听</i>	
+				</a>
+			</footer>
+			<!--底部导航结束-->
+		<script type="text/javascript" src="http://api.map.baidu.com/api?v=2.0&ak=WK2uPCA2uXjKErb1CF83kN571G26CiD7"></script>
+		<script type="text/javascript" src="js/swiper/js/swiper.min.js" ></script>
+
+		<script type="text/javascript" src="js/jquery.js" ></script>
+		<script type="text/javascript" src="js/layer/layer.js" ></script>
+		<script type="text/javascript" src="js/location.js" ></script>
+		
+		
+		<!--导航按钮单击-->
+		<script type="text/javascript">
+			$(function(){
+				$('#navBtn,#nav').click(function(){
+					toggle();
+					
+				});
+				//侧滑菜单切换
+				function toggle(){
+					if($('#main').hasClass('navon')){
+						$('#main').removeClass('navon');
+						$('footer').removeClass('navon');
+						$('#nav').css('visibility','hidden');
+					}else{
+						$('#main').addClass('navon');
+						$('footer').addClass('navon');
+						$('#nav').css('visibility','visible');
+					}
+				}
+				//页面路由
+				$('#nav a').click(function(e){
+					var url =$(this).attr('href');
+				//发出ajax请求获得网页内容
+				$('#main').load(url);
+				
+				//阻止默认行为
+				e.preventDefault();
+					
+			
+				});
+				//初始化首页
+				$('#main').load('index.html');
+				
+			})
+		</script>
+
+	</body>
+</html>

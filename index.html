@@ -1,0 +1,98 @@
+		<!--主内容区开始-->
+		<div id="index"  >
+			<!--头部开始-->
+			<header>
+				<!--轮播图开始-->
+				<div class="swiper-container">
+					<div class="swiper-wrapper">
+						<div class="swiper-slide">
+							<img src="images/banner01.jpg" alt="" />
+						</div>
+						<div class="swiper-slide">
+							<img src="images/banner02.jpg" alt="" />
+						</div>
+						<div class="swiper-slide">
+							<img src="images/banner03.jpg" alt="" />
+						</div>
+						<div class="swiper-slide">
+							<img src="images/banner04.jpg" alt="" />
+						</div>						
+					</div>	
+					<!-- Add Pagination -->
+		        	<div class="swiper-pagination"></div>		        	
+				</div>
+
+				<!--轮播图结束-->
+			</header>
+			<!--头部结束-->
+			<!--内容区域开始-->
+			<div class="container">
+				<!--滚动字幕开始-->
+				<marquee>全栈工程师即将开课，敬请关注。。。。。。。</marquee>
+				<!--滚动字幕结束-->
+				<!--列表开始-->
+				<ul>
+					<li>
+						<img src="images/item1.jpg"/>
+						<img src="images/item1_on.png" alt="" class="on"/>
+						<dl>
+							<dt>&#xe600</dt>
+							<db>卓越简介</db>
+						</dl>
+					</li>
+					<li>
+						<img src="images/item2.jpg"/>
+						<img src="images/item2_on.png" alt="" class="on"/>
+						<dl>
+							<dt>&#xe601</dt>
+							<db>精品课程</db>
+						</dl>
+					</li>
+					<li>
+						<img src="images/item3.jpg"/>
+						<img src="images/item3_on.png" alt="" class="on"/>
+						<dl>
+							<dt>&#xe604</dt>
+							<db>师资介绍</db>
+						</dl>
+					</li>
+					<li>
+						<img src="images/item4.jpg"/>
+						<img src="images/item4_on.png" alt="" class="on"/>
+						<dl>
+							<dt>&#xe607</dt>
+							<db>就业展示</db>
+						</dl>
+					</li>
+					<li>
+						<img src="images/item5.jpg"/>
+						<img src="images/item5_on.png" alt="" class="on"/>
+						<dl>
+							<dt>&#xe603</dt>
+							<db>课程试听</db>
+						</dl>
+					</li>
+					<li>
+						<img src="images/item6.jpg"/>
+						<img src="images/item6_on.png" alt="" class="on"/>
+						<dl>
+							<dt>&#xe602</dt>
+							<db>预约报名</db>
+						</dl>
+					</li>
+				</ul>
+				<!--列表结束-->
+			</div>
+			<!--内容区结束-->
+			
+		</div>
+		<!--主内容区结束-->
+	<script>
+			//初始化轮播图
+			var swiper = new Swiper('.swiper-container',{
+				pagination: '.swiper-pagination',				
+    			autoplay: 3000,
+    			autoplayDisableOnInteraction: false,
+    			loop: true
+			});			
+		</script>

@@ -1,0 +1,149 @@
+@charset "utf-8";
+*{
+	margin: 0;
+	padding: 0;
+}
+ul,li{
+	list-style: none;
+}
+a{
+	text-decoration: none;
+}
+/*配置自定义字体*/
+@font-face {
+	font-family:iconfont;
+	src: url(../font/font_1419313818_3473415.ttf);
+}
+html,body{
+	height: 100%;
+	position: relative;
+	background: #2c2769;
+	overflow: hidden;
+}
+/*主内容区开始*/
+#main{
+	position: absolute;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 46px;
+	overflow-y: auto;
+	transition: all 1s;
+	-webkit-transition: all 1s;
+	
+}
+/*渐变背景颜色*/
+.bg{
+	
+	background: -webkit-radial-gradient(center, ellipse cover, #dee6cf 0, #4696ad 100%);
+
+}
+/*轮播图片*/
+.swiper-slide img{
+	display: block;
+	width: 100%;
+}
+/*内容区*/
+.container{
+	width: 100%;
+	position: relative;
+}
+/*滚动字幕*/
+marquee{
+	font-size: 0.8em;
+	margin: 0.5em 0;
+}
+/*图片列表*/
+.container ul{
+	overflow: hidden;
+	
+}
+.container ul li{
+	position: relative;
+	overflow: hidden;
+	width: 44%;
+	margin-left: 4%;
+	margin-bottom: 4%;
+	float: left;
+}
+.container ul li img{
+	display: block;
+	width: 100%;
+}
+.container ul li .on{
+	position: absolute;
+	top: 0;
+}
+.container ul li dl{
+	position: absolute;
+	top: 0;
+	right: 0.8em;
+	color: #FFF;
+	font-size: 0.8em;
+	padding-top: 0.8em;
+}
+.container ul li dl dt{
+	font-family: iconfont;
+}
+footer{
+	position: absolute;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	background: #2c2769;
+	transition: all 1s;
+	-webkit-transition: all 1s;
+	
+}
+footer a{
+	display: block;
+	width: 33.33333%;
+	color: #fff;
+	text-align: center;
+	float: left;
+	padding: 0.2em 0;
+}
+footer a b{
+	display: block;
+	font-family: iconfont;
+	font-weight: 400;
+	font-size: 1.5em;
+}
+footer a i{
+	display: block;
+	font-style: normal;
+	font-size: 0.8em;
+}
+/*左侧导航菜单*/
+.left-nav{
+	position: absolute;
+	left: 0;
+	right: 40%;
+	top: 0;
+	bottom: 0;
+	background: #666666;
+	color: #eee;
+	font-size: 0.8em;
+	line-height: 2.5em;
+	visibility: hidden;
+}
+.left-nav h2{
+	font-weight: normal;
+	background: #444;
+	padding-left: 2em;
+}
+.left-nav ul li{
+	padding-left: 0.75em;
+	border-bottom: 1px solid #999;
+}
+/*侧滑移动样式*/
+.navon{
+	transform: translateX(60%);
+	-webkit-transform: translateX(60%);
+	
+}
+/*地图页面样式*/
+#map{
+	width: 100%;
+	height: 100%;
+}

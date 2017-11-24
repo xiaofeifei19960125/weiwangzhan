@@ -1,0 +1,42 @@
+<div id="map">
+		
+</div>
+
+<script>
+	//经纬度（正常应该通过GPS动态获得，以下做实验写死）
+	var longitude = 121.51155629576095;
+	var latitude = 38.86043635958201;
+	
+	//调用百度地图的API
+	var map = new BMap.Map('map'); //创建地图对象				
+	var point = new BMap.Point(longitude,latitude);//坐标点对象
+									
+	//添加地图类型控件，默认在地图右上方
+	map.addControl(new BMap.MapTypeControl());
+	//地图平移缩放控件，PC端默认地图左上方，移动端提供缩放控件，默认在地图右下方
+	map.addControl(new BMap.NavigationControl());
+	//比例尺控件，默认在地图左下方，显示地图的比例关系
+	map.addControl(new BMap.ScaleControl());
+	//缩略地图控件，默认在地图右下方，是一个可折叠的缩略地图
+	map.addControl(new BMap.OverviewMapControl());
+	//定位控件，针对于移动端，默认在地图左下方
+	map.addControl(new BMap.GeolocationControl());
+	//开启滚轮缩放
+	map.enableScrollWheelZoom(true);
+	
+	//百度地图的坐标和正常GPS获得的坐标类型不一致，有一定的误差，需要纠偏									
+	var convertor = new BMap.Convertor(); //转换坐标类的对象
+	var pointArr = []; //坐标数组
+	pointArr.push(point); //加入一个坐标对象（可以加入多个坐标对象）
+	convertor.translate(pointArr,1,5,translateCallback);//转换坐标				
+	
+	//转换完毕的回调函数，data就是转换后的数据
+	function translateCallback(data) {
+		
+		if (data.status == 0) { //0为转换成功
+			var marker = new BMap.Marker(data.points[0]); //创建标记点
+			map.addOverlay(marker);//在地图上添加标记点										
+			map.centerAndZoom(data.points[0],15) ;//设置坐标中心点和缩放级别
+		}					
+	}		
+</script>
